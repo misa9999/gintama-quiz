@@ -1,16 +1,14 @@
+import React from "react";
 import styled from "styled-components";
+import Head from "next/head";
+import { useRouter } from "next/router";
+
 import db from "../db.json";
 import Widget from "../src/components/Widget";
 import QuizBackground from "../src/components/QuizBackground";
 import Footer from "../src/components/Footer";
 import GitHubCorner from "../src/components/GitHubCorner";
-
-// const BackgroundImage = styled.div`
-//   background-image: url(${db.bg});
-//   flex: 1;
-//   background-size: cover;
-//   background-position: center;
-// `;
+import QuizLogo from "../src/components/QuizLogo";
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -23,18 +21,39 @@ export const QuizContainer = styled.div`
   }
 `;
 
-
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = React.useState('');
+
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>One Piece - Quiz</title>
+      </Head>
       <QuizContainer>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>Bring me the horizon</h1>
+            <h1>One Piece</h1>
           </Widget.Header>
 
           <Widget.Content>
-            <p>DESCRIPTION</p>
+            <form 
+              onSubmit={(e) => {
+                router.push(`/quiz?name=${name}`);
+            }}
+            >
+              <input 
+                onChange={(e) => {
+                  setName(e.target.value);
+              }}
+                placeHolder="Type your name" 
+              />
+              <button type="submit" disabled={name.length === 0}>
+                Start 
+                {name}
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
 
@@ -46,7 +65,7 @@ export default function Home() {
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/yuukiasuna00"/>
+      <GitHubCorner projectUrl="https://github.com/yuukiasuna00/onepiece-quiz"/>
     </QuizBackground>
   );
 }
