@@ -49,4 +49,4 @@ This project is under MIT license. See the [LICENSE](https://github.com/yuukiasu
 
 ---
 <h2>💙 Credits</h2>
-Alura 💜 [Alura](https://github.com/alura-cursos) 💜 
+Alura 💜 [Alura](https://github.com/alura-cursos) 💜
