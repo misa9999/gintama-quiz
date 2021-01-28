@@ -6,8 +6,9 @@
 </div>
 
 ---
-<h2 align="center">Follow the Road</h2>
+
 <div align="center">
+  <h2 align="center">Follow the Road</h2>
   <a href="#about">About</a> |
   <a href="#technologies">Technologies</a> |
   <a href="#how-to-use">How to use</a> |
@@ -15,12 +16,12 @@
   <a href="#credits">Credits</a>
 </div>
 
-<h2>📋 About</h2>
+## 📋 About
 <p>This project was developed with NextJS during the Alura immersion. In this project we built a quiz app using Styled-Components, Next.Js, and Vercel to deploy the application. I learned a lot of new content about Next and the same time I built a project with my favorite anime!
 </p>
 
 ---
-<h2>🚀 Technologies</h2>
+### 🚀 Technologies
 <a href="https://nextjs.org/">
   <img alt="Next JS" src="https://img.shields.io/badge/next%20js%20-%23000000.svg?&style=for-the-badge&logo=next.js&logoColor=white"/>
 </a>
@@ -35,7 +36,7 @@
 </a>
 
 ---
-<h2>📲 How to use</h2>
+###📲 How to use
 
 >### Step 1: Clone this repository: git clone git@github.com:yuukiasuna00/gintama-quiz.git
 
@@ -44,9 +45,9 @@
 >### Step 3: Type yarn dev and open in your browser https://localhost:3000
 
 ---
-<h2>📄 License</h2>
+### 📄 License
 This project is under MIT license. See the [LICENSE](https://github.com/yuukiasuna00/gintama-quiz/blob/master/LICENSE) file for more details.
 
 ---
-<h2>💙 Credits</h2>
+### 💙 Credits
 Alura 💜 [Alura](https://github.com/alura-cursos) 💜
