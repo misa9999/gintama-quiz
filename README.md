@@ -2,18 +2,20 @@
 <p align="center">Only True Samurais Can Score At Least 80%</p>
 
 <div align="center">
+  
   ![Gintama](https://i.imgur.com/o1P7S5w.png)
+  
 </div>
 
 ---
 
 <div align="center">
   <h2 align="center">Follow the Road</h2>
-  <a href="#about">About</a> |
-  <a href="#technologies">Technologies</a> |
-  <a href="#how-to-use">How to use</a> |
-  <a href="#license">License</a> |
-  <a href="#credits">Credits</a>
+  <a href="#-about">About</a> |
+  <a href="#-technologies">Technologies</a> |
+  <a href="#-how-to-use">How to use</a> |
+  <a href="#-license">License</a> |
+  <a href="#-credits">Credits</a>
 </div>
 
 ## 📋 About
