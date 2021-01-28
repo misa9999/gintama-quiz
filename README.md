@@ -36,7 +36,7 @@
 </a>
 
 ---
-###📲 How to use
+### 📲 How to use
 
 >### Step 1: Clone this repository: git clone git@github.com:yuukiasuna00/gintama-quiz.git
 
