@@ -1,17 +1,17 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import styled from 'styled-components';
 import FadeLoader from 'react-spinners/FadeLoader';
 
-
-import Button from '../src/components/Button';
-import db from '../db.json';
-import AlternativesForm from '../src/components/AlternativesForm';
-import QuizBackground from '../src/components/QuizBackground';
-import QuizContainer from '../src/components/QuizContainer';
-import QuizLogo from '../src/components/QuizLogo';
-import Widget from '../src/components/Widget';
-import Loader from '../src/components/Loader';
-import ResultScreen from '../src/components/ResultScreen';
+import Button from '../../src/components/Button';
+import db from '../../db.json';
+import AlternativesForm from '../../src/components/AlternativesForm';
+import QuizBackground from '../../src/components/QuizBackground';
+import QuizContainer from '../../src/components/QuizContainer';
+import QuizLogo from '../../src/components/QuizLogo';
+import Widget from '../../src/components/Widget';
+import Loader from '../../src/components/Loader';
+import ResultScreen from '../../src/components/ResultScreen';
 
 function ResultWidget({ results }) {
   const params = new URLSearchParams(window.location.search);
@@ -21,20 +21,28 @@ function ResultWidget({ results }) {
   return (
     <Widget>
       <Widget.Header>
-        Result Screen: 
+        Result Screen:
       </Widget.Header>
 
       <Widget.Content>
         <ResultScreen>
-          You got {tot} out of {results.length} right!
-          <br/><br/>
+          You got
+          {' '}
+          {tot}
+          {' '}
+          out of
+          {' '}
+          {results.length}
+          {' '}
+          right!
+          <br />
+          <br />
           {`${username}: ${percentage.toFixed()}%`}
         </ResultScreen>
       </Widget.Content>
     </Widget>
   );
 }
-
 
 function LoadingWidget() {
   const [loading, setLoading] = React.useState(false);
@@ -52,8 +60,8 @@ function LoadingWidget() {
         <Loader>
           {
             loading ? (
-            <FadeLoader size={100} color={"#E03549"} loading={loading}/>
-          ) :(<p/>)
+              <FadeLoader size={100} color="#E03549" loading={loading} />
+            ) : (<p />)
           }
         </Loader>
       </Widget.Content>
@@ -61,13 +69,12 @@ function LoadingWidget() {
   );
 }
 
-
-function QuestionWidget({ 
-  question, 
-  totQuestions, 
+function QuestionWidget({
+  question,
+  totQuestions,
   questionIndex,
   onSubmit,
-  addResult
+  addResult,
 }) {
   const [selectedAlternative, setSelectedAlternative] = React.useState(undefined);
   const [isQuestionSubmited, setIsQuestionSubmited] = React.useState(false);
@@ -83,7 +90,7 @@ function QuestionWidget({
         </h3>
       </Widget.Header>
 
-      <img 
+      <img
         alt="description"
         style={{
           width: '100%',
@@ -99,8 +106,8 @@ function QuestionWidget({
         <p>
           {question.description}
         </p>
-        
-        <AlternativesForm 
+
+        <AlternativesForm
           onSubmit={(e) => {
             e.preventDefault();
             setIsQuestionSubmited(true);
@@ -125,10 +132,10 @@ function QuestionWidget({
                 data-status={isQuestionSubmited && alternativeStatus}
               >
                 <input
-                  style={{ display: 'none'}}
+                  style={{ display: 'none' }}
                   id={alternativeId}
                   name={questionId}
-                  onChange={() => setSelectedAlternative(alternativeIndex)}
+                  onClick={() => setSelectedAlternative(alternativeIndex)}
                   type="radio"
                 />
                 {alternative}
@@ -164,7 +171,7 @@ export default function QuizPage() {
   const question = db.questions[questionIndex];
 
   function addResult(result) {
-    setResults([...results, result, ])
+    setResults([...results, result]);
   }
 
   React.useEffect(() => {
@@ -182,7 +189,6 @@ export default function QuizPage() {
     } else {
       setScreenState(screenStates.RESULT);
     }
-
   }
 
   return (
@@ -191,7 +197,7 @@ export default function QuizPage() {
         <QuizLogo />
 
         {screenState === screenStates.QUIZ && (
-          <QuestionWidget 
+          <QuestionWidget
             question={question}
             questionIndex={questionIndex}
             totQuestions={totQuestions}

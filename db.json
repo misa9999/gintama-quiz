@@ -337,7 +337,8 @@
     }
   ],
   "external": [
-    ""
+    "https://gintama-quiz.yuukiasuna00.vercel.app/",
+    "https://supernatural-quiz.pedro-murilo.vercel.app/"
   ],
   "theme": {
     "colors": {
